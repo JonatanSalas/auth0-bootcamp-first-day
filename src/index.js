@@ -13,3 +13,9 @@ app.listen(8080, (err) => {
 
     console.info("> Server is at http://localhost:8080");
 });
+
+
+// /api/password/compare?hash=&value=
+// /api/password/encrypt?value=
+// /api/password/verify?value=
+// /api/password/generate 
