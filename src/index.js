@@ -4,7 +4,7 @@ const router = require("./router");
 
 const app = new Express();
 
-app.use(router);
+app.use("/api", router);
 
 app.listen(8080, (err) => {
     if (err) {
