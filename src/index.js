@@ -4,12 +4,12 @@ const router = require("./router");
 
 const app = new Express();
 
-app.use(router);
+app.use("/api", router);
 
-app.listen(8080, (err) => {
+app.listen(3000, (err) => {
     if (err) {
         console.error("> Server start failed", err);
     }
 
-    console.info("> Server is at http://localhost:8080");
+    console.info("> Server is running at port 3000");
 });
