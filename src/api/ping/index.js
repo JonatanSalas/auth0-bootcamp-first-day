@@ -5,7 +5,7 @@ const Logger = require("../../logger");
 const router = new Router();
 
 router.get("/ping", (req, res) => {
-    Logger.info(`> Router - GET Request at http://${process.env.HOST}:${process.env.PORT}/`);
+    Logger.info(`> Router - GET Request at port 3000`);
 
     Logger.log(`> Controller - Pinging!`);
 

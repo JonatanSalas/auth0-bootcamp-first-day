@@ -4,14 +4,12 @@ const Logger = require("../../logger");
 
 const router = new Router();
 
-router.get("/ping", (req, res) => {
-    Logger.info(`> Router - GET Request at http://${process.env.HOST}:${process.env.PORT}/`);
-
-    Logger.log(`> Controller - Pinging!`);
+router.get("/password/generate", (req, res) => {
+    Logger.log('> Controller - Password generation');
 
     res.status(200);
     res.setHeader("content-type", "application/json; charset=utf-8");
-    res.json({ ping: "pong" });
+    res.json({ value: "generated password" });
 });
 
 module.exports = router;

@@ -6,9 +6,9 @@ const { hashValue } = require("../../utils");
 const router = new Router();
 
 router.get("/password/encrypt", async (req, res) => {
-    Logger.log(`> Controller - Start to encrypt value`);
+    Logger.log('> Controller - Start to encrypt value');
 
-    const hashedValue = await hashValue(req.query.value, 60);
+    const hashedValue = await hashValue(req.query.value, 10);
 
     res.status(200);
     res.setHeader("content-type", "application/json; charset=utf-8");
