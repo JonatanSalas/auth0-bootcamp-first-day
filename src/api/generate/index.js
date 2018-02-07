@@ -1,5 +1,7 @@
 const { Router } = require("express");
 
+const PasswordGenerator = require("generate-password");
+
 const Logger = require("../../logger");
 
 const router = new Router();
@@ -7,9 +9,17 @@ const router = new Router();
 router.get("/password/generate", (req, res) => {
     Logger.log('> Controller - Password generation');
 
+    const password = PasswordGenerator.generate({
+        length: 12,
+        numbers: true,
+        symbols: true,
+        strict: true,
+        exclude: '%;|/?:@&=+$,[](){}^`#\'\"<>',
+    });
+
     res.status(200);
     res.setHeader("content-type", "application/json; charset=utf-8");
-    res.json({ value: "generated password" });
+    res.json({ value: password });
 });
 
 module.exports = router;

@@ -13,9 +13,3 @@ app.listen(3000, (err) => {
 
     console.info("> Server is running at port 3000");
 });
-
-
-// /api/password/compare?hash=&value=
-// /api/password/encrypt?value=
-// /api/password/verify?value=
-// /api/password/generate 
