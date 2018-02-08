@@ -6,7 +6,7 @@ const { hashValue } = require("../../utils");
 const router = new Router();
 
 router.get("/password/encrypt", async (req, res) => {
-    Logger.log('> Controller - Start to encrypt value');
+    Logger.info('> Controller - Start to encrypt value');
 
     const hashedValue = await hashValue(req.query.value, 10);
 

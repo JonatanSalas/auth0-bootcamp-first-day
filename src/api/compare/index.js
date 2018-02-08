@@ -6,7 +6,7 @@ const { compareHashWithValue } = require("../../utils");
 const router = new Router();
 
 router.get("/password/compare", async (req, res) => {
-    Logger.log('> Controller - Password comparison');
+    Logger.info('> Controller - Password comparison');
 
     const comparisonResult = await compareHashWithValue(req.query.hash, req.query.value);
 

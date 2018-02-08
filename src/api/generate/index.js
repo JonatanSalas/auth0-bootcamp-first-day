@@ -7,7 +7,7 @@ const Logger = require("../../logger");
 const router = new Router();
 
 router.get("/password/generate", (req, res) => {
-    Logger.log('> Controller - Password generation');
+    Logger.info('> Controller - Password generation');
 
     const password = PasswordGenerator.generate({
         length: 12,

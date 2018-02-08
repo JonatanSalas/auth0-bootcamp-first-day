@@ -12,7 +12,7 @@ const strength = {
 };
 
 router.get("/password/verify", (req, res) => {
-    Logger.log('> Controller - Password strength verification');
+    Logger.info('> Controller - Password strength verification');
 
     owasp.config({
         allowPassphrases       : false,
