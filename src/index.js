@@ -14,3 +14,5 @@ app.listen(3000, (err) => {
 
     Logger.info("> Server is running at port 3000");
 });
+
+module.exports = app;
