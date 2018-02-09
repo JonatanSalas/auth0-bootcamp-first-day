@@ -6,10 +6,7 @@ const Logger = require("../../logger");
 
 const router = new Router();
 
-const strength = {
-    STRONG: 'strong',
-    WEAK: 'weak',
-};
+const passwordStrength = require('./verify.strings').strength;
 
 router.get("/password/verify", (req, res) => {
     Logger.info('> Controller - Password strength verification');
@@ -27,8 +24,9 @@ router.get("/password/verify", (req, res) => {
 
     res.status(200);
     res.setHeader("content-type", "application/json; charset=utf-8");
+    console.log(verification.strong ? passwordStrength.STRONG : passwordStrength.WEAK)
     res.json({
-        result: verification.strong ? strength.STRONG : strength.WEAK,
+        result: verification.strong ? passwordStrength.STRONG : passwordStrength.WEAK,
         error: verification.errors,
     });
 });
